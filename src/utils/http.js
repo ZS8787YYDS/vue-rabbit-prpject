@@ -1,3 +1,5 @@
+// 导入axios，定义一个axios的实例对象，指定接口基地址 接口超时时间 定义请求拦截器以及响应拦截器
+// 最后将axios的实例对象导出
 import axios from 'axios'
 
 // 创建axios实例

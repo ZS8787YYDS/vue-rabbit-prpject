@@ -1,23 +1,30 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+// createRouter函数用于创建路由实例对象，createWebHistory函数用于创建基于H5的历史模式的路由。即不带#
+import {createRouter,createWebHistory} from 'vue-router'
+import Login from '@/views/login/index.vue'
+import Layout from '@/views/layout/index.vue'
+import Home from '@/views/home/index.vue'
+import category from '@/views/category/index.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+  routes:[
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path:'/login',
+      component: Login
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      path:'/',
+      component: Layout,
+      children:[
+        {
+          path:'',
+          component:Home
+        },
+        {
+          path:'category',
+          component:category
+        }
+      ]
     }
   ]
 })
-
 export default router

@@ -1,20 +1,25 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 
 </script>
 
 <template>
   <el-button type="success">Primary</el-button>
+  // 一级路由出口
   <router-view></router-view>
+  <div class="cls">
+    睡觉睡觉
+  </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
+.cls{
+  color: $sucColor; 
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;

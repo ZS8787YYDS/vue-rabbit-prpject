@@ -1,20 +1,18 @@
 <script setup>
-
+import { useCategoryStore } from '@/stores/Category';
+const categoryStore = useCategoryStore()
 </script>
 
 <template>
   <header class='app-header'>
-    <div class="container">
+    <div class="container" >
       <h1 class="logo">
         <RouterLink to="/">小兔鲜</RouterLink>
       </h1>
       <ul class="app-header-nav">
-        <li class="home">
-          <RouterLink to="/">首页</RouterLink>
+        <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
+          <RouterLink to="/">{{ item.name }}</RouterLink>
         </li>
-        <li> <RouterLink to="/">居家</RouterLink> </li>
-        <li> <RouterLink to="/">美食</RouterLink> </li>
-        <li> <RouterLink to="/">服饰</RouterLink> </li>
       </ul>
       <div class="search">
         <i class="iconfont icon-search"></i>

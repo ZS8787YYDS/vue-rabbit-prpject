@@ -7,7 +7,7 @@ import HomeProductListVue from "./Components/HomeProductList.vue";
 import HomeRecommendVue from "./Components/HomeRecommend.vue";
 </script>
 <template>
-    <div>
+    <div class="container">
         <Home-category></Home-category>
         <Home-banner></Home-banner>
     </div>
